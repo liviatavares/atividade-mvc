@@ -1,83 +1,18 @@
-# Boilerplate MVC em Node.js com PostgreSQL
+## Aula do dia 13/05/2025
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+Nessa aula, entendi melhor o que é um join e como ele funciona. Descobri que existem varios tipos de join:
 
-## Requisitos
+1. Inner join: Esse join junta as tabelas relacionais, mas apenas com as seções em comum entre elas, em uma nova tabela.
 
-- Node.js (versão X.X.X)
-- PostgreSQL (versão X.X.X)
+2. Left e right join: Esses joins junta as informações de duas tabelas (uma à esquerda e uma à direita) em uma nova tabela. Diferentemente do inner join, esse join junta todos os atributos das tabelas. Se houver uma coluna em uma que não está na outra, esses joins criam a coluna, mas colocam atributos "null". A nova tabela retornará todos os atributos de uma das tabelas (left - esquerda e right - direita), juntamente com as colunas novas em comum às duas tabelas unidas.
 
-## Instalação
+3. Full join: Nesse join, as informações das tabelas são juntas completamente. É uma junção de left e right join.
 
-1. **Clonar o repositório:**
+Além disso, vi na prática, com a atualização do mini site CRUD, como usar o MVC e as consultas:
 
-```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
-```
+1. O model e o controller da tabela "aluno", que já tinha sido criada, foi atualizado para, também, colocar as informações de "curso". Essa tabela curso, que foi criada, se relaciona com aluno pois há uma chave primária dela (curso.id) que se transformou em uma chave estrangeira para a tabela aluno (aluno.curso_id). Isso faz com que elas se relacionem.
 
-2. **Instalar as dependências:**
-    
-```bash
-npm install
-```
-    
-3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
-    
+2. Essas informações foram adicionadas no init.sql, que fica dentro de scripts, adicionando a coluna curso_id na tabela alunos e transformando em uma chave estrangeira.
 
-Configuração do Banco de Dados
-------------------------------
+3. Um LEFT JOIN ocorreu no model de aluno: a consulta para achar todos os alunos de certo curso (findAllComCurso) fez um left join para juntar a tabela "aluno" (à esquerda) com a tabela "cursos" (à direita), unindo a informação dos id's dos alunos na coluna curso_id na tabela. Além disso, foi mostrada uma relação crescente das informações dos alunos.
 
-1. **Criar banco de dados:**
-    
-    Crie um banco de dados PostgreSQL com o nome especificado no seu arquivo `.env`.
-    
-2. **Executar o script SQL de inicialização:**
-    
-```bash
-npm run init-db
-```
-    
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
-    
-
-Funcionalidades
----------------
-
-* **Padrão MVC:** Estrutura organizada em Model, View e Controller.
-* **PostgreSQL:** Banco de dados relacional utilizado para persistência dos dados.
-* **UUID:** Utilização de UUID como chave primária na tabela `users`.
-* **Scripts com `nodemon`:** Utilização do `nodemon` para reiniciar automaticamente o servidor após alterações no código.
-* **Testes:** Inclui estrutura básica para testes automatizados.
-
-Scripts Disponíveis
--------------------
-
-* `npm start`: Inicia o servidor Node.js.
-* `npm run dev`: Inicia o servidor com `nodemon`, reiniciando automaticamente após alterações no código.
-* `npm run test`: Executa os testes automatizados.
-* `npm run test:coverage`: Executa os testes e gera um relatório de cobertura de código.
-
-Estrutura de Diretórios
------------------------
-
-* **`config/`**: Configurações do banco de dados e outras configurações do projeto.
-* **`controllers/`**: Controladores da aplicação (lógica de negócio).
-* **`models/`**: Modelos da aplicação (definições de dados e interações com o banco de dados).
-* **`routes/`**: Rotas da aplicação.
-* **`tests/`**: Testes automatizados.
-* **`views/`**: Views da aplicação (se aplicável).
-
-Contribuição
-------------
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
-
-Licença
--------
-
-Este projeto está licenciado sob a Licença MIT.
-
-Este README.md fornece uma visão geral clara do boilerplate, incluindo instruções de instalação, configuração do banco de dados, funcionalidades principais, scripts disponíveis, estrutura de diretórios, como contribuir e informações de licença. Certifique-se de personalizar as seções com detalhes específicos do seu projeto conforme necessário.
