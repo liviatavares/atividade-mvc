@@ -26,5 +26,28 @@ Além disso, vi na prática, com a atualização do mini site CRUD, como usar o 
 
 O modelo MVC, junto com os endpoints e com o node.js, ajudam o sistema a processar o CRUD, e, assim, conseguir adaptar as informações do sistema pelo próprio site.
 
+# Aula do dia 20/05/2025
+
+1. Explique com suas palavras o papel de cada camada da arquitetura MVC usada neste projeto. *Como o Model, o Controller e a View interagem entre si?*
+
+O model funciona como o banco de informações. Nele, são definidas as informações necessárias para a estruturação do site. Nele, são criadas funções que definem o CRUD: create, update, read e delete.
+
+O controller é um intermediário da aplicação. Ele se comunica com o model e com o view por meio das routes, pegando as informações do model e trazendo para o view. 
+
+O view mostra como o site está ficando visualmente. Por meio do index.ejs, um código html é produzido para mostrar o site na prática.
+
+2. Como ocorre o envio e o recebimento de dados no formato JSON neste projeto? *Cite uma rota que responde em JSON e explique seu funcionamento.*
+
+``` javascript
+router.get('/', controller.index);
+router.post('/', controller.store);
+```
+
+Ao fazer uma requisição GET, o controller chama o método findAll() do model para buscar todos os alunos no banco de dados, por exemplo. No POST, o controller usa o método create() do model para criar um novo aluno.
+
+3. Qual a importância de usar HTML básico com formulários e tabelas para organizar e manipular dados no navegador? *Por que esse tipo de estrutura ainda é útil em projetos back-end com Node.js?*
+
+Para visualizar melhor o que está acontecendo com as informações do banco de dados. Ao integrar um front end via API Requests, torna-se muito mais fácil realizar as operações CRUD pelo html do que ter que criar várias solicitações API por meio de um aplicativo externo como o Postman, por exemplo.
+
 
 
