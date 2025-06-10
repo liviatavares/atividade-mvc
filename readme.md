@@ -64,10 +64,15 @@ III. Uma disciplina pode ser associada a múltiplos professores, o que justifica
 IV. O uso de constraints como FOREIGN KEY garante que registros referenciados existam nas tabelas originais.  (ok)
 
 **É correto o que se afirma em:**  
+
 **A) I, II e IV, apenas.**  
+
 B) I e III, apenas.  (x)
+
 C) II, III e IV, apenas.  (x)
+
 D) I, II e III, apenas.  (x)
+
 E) Todas as afirmativas estão corretas. (x)
 
 ### QUESTÃO 2 – Arquitetura Cliente-Servidor com MVC
@@ -79,71 +84,96 @@ III. A View representa a saída visual da aplicação e é gerada a partir das i
 IV. Separar lógica de negócio e interface facilita a manutenção e reuso de código.  (ok)
 
 **É correto o que se afirma em:**  
+
 **A) I, III e IV, apenas.**
+
 B) I e II, apenas.  (X)
-C) III e IV, apenas.  
+
+C) III e IV, apenas.  (x)
+
 D) II, III e IV, apenas.  (X)
+
 E) Todas as afirmativas estão corretas. (x)
 
-### QUESTÃO 3 – Banco de Dados Não Relacionais
+### QUESTÃO 3 – Banco de Dados Não Relacionais (!)
 Uma startup desenvolvendo uma aplicação de redes sociais decidiu utilizar um banco de dados do tipo NoSQL para armazenar informações de perfis de usuários, postagens e relações de amizade. A escolha se deu pela flexibilidade de estrutura e pela necessidade de escalar horizontalmente a aplicação com facilidade.
 
-I. Bancos de dados orientados a documentos são ideais para armazenar dados com estrutura variável, como perfis de usuário.  (?, mas acho que não)
+I. Bancos de dados orientados a documentos são ideais para armazenar dados com estrutura variável, como perfis de usuário.  (ok)
 II. Bancos do tipo grafo são adequados para representar relações como "amizade" entre usuários.  (ok)
-III. A consistência eventual é uma característica típica dos bancos NoSQL, diferente dos bancos relacionais.  (ok)
-IV. Em um banco do tipo chave-valor, cada registro precisa estar normalizado em três formas normais.  (?)
+III. A consistência eventual (*Consistência eventual significa que você pode ver diferentes versões dos mesmos dados em momentos diferentes. Se nenhuma nova atualização ocorrer, todos os acessos a um determinado item de dados retornarão o último valor atualizado, mesmo que possa levar algum tempo para que essa atualização seja refletida em todos os nós. Serve para dados imutáveis, como áudios, documentos, etc*) é uma característica típica dos bancos NoSQL, diferente dos bancos relacionais.  (ok)
+IV. Em um banco do tipo chave-valor, cada registro precisa estar normalizado em três formas normais (*conjunto de regras e procedimentos que garantem que uma tabela de banco de dados esteja bem estruturada, reduzindo redundâncias e evitando anomalias de atualização, inclusão e exclusão de dados*).  (ok)
 
 **É correto o que se afirma em:**  
-A) I, II e III, apenas.  
+
+A) I, II e III, apenas. (x)
+
 B) I e IV, apenas.  (x)
-**C) II e III, apenas.**  
+
+C) II e III, apenas. (x)
+
 D) I, III e IV, apenas.  (x)
-E) Todas as afirmativas estão corretas.
+
+**E) Todas as afirmativas estão corretas.**
 
 ### QUESTÃO 4 – Requisições Assíncronas com Controllers
 Em uma aplicação que utiliza o framework Express.js, o aluno foi encarregado de implementar a lógica do backend. O sistema recebe requisições assíncronas do frontend utilizando a Fetch API e responde com dados obtidos de um banco PostgreSQL. A lógica de cada rota é implementada em controladores assíncronos.
 
 I. O uso de async/await facilita a leitura de código assíncrono em JavaScript.  (ok)
 II. Requisições POST e DELETE podem ser tratadas no mesmo controller desde que a rota esteja definida corretamente.  (ok)
-III. Controllers devem concentrar a lógica de negócio e persistência para simplificar o projeto.  (não - a lógica de negócios é concentrada nos models)
+III. Controllers devem concentrar a lógica de negócio e persistência (*aquilo que não dá para alterar, ou seja, a estrutura do model*) para simplificar o projeto.  (não - a lógica de negócios é concentrada nos models)
 IV. As funções assíncronas exigem tratamento de erros com try/catch para evitar travamentos na aplicação.  (ok)
 
 **É correto o que se afirma em:**  
+
 **A) I, II e IV, apenas.**  
+
 B) II e III, apenas.  (x)
+
 C) I, III e IV, apenas.  (x)
+
 D) I, II e III, apenas.  (x)
+
 E) Todas as afirmativas estão corretas. (X)
 
-### QUESTÃO 5 – Anatomia de uma Aplicação em Camadas
+### QUESTÃO 5 – Anatomia de uma Aplicação em Camadas (!)
 Um grupo de desenvolvedores está projetando uma aplicação web corporativa e decidiu utilizar uma arquitetura em camadas para garantir a manutenibilidade e a escalabilidade do sistema. O sistema será dividido entre a camada de apresentação (frontend), a camada de negócios (backend) e a camada de dados (banco de dados). Cada camada terá responsabilidades bem definidas.
 
 I. A camada de apresentação é responsável por interagir com o usuário, exibindo informações e coletando entradas.  (ok)
 II. A camada de negócios aplica as regras funcionais e validações, separando-se da interface e da lógica de persistência.  (ok)
-III. A camada de dados deve encapsular o acesso ao banco, impedindo o acesso direto por outras camadas.  
-IV. A ausência de camadas intermediárias favorece o acoplamento e reduz a reutilização de componentes.  (ok)
+III. A camada de dados deve encapsular (*uso de json*) o acesso ao banco, impedindo o acesso direto por outras camadas.  (ok)
+IV. A ausência de camadas intermediárias favorece o acoplamento e reduz a reutilização de componentes.  (não, pois não reduz a reutilização de componentes. o mvc aumenta componentes repetidos, mas isso facilita a alteração posterior e visualização)
 
 **É correto o que se afirma em:**  
-A) I, II e III, apenas.  (x)
-B) II, III e IV, apenas.  (x)
-C) I, III e IV, apenas.  (X)
-D) I, II e IV, apenas.  
-**E) Todas as afirmativas estão corretas.**
 
-### QUESTÃO 6 – Paradigmas de Programação
+**A) I, II e III, apenas.**  
+
+B) II, III e IV, apenas.  (x)
+
+C) I, III e IV, apenas.  (X)
+
+D) I, II e IV, apenas.  (x)
+
+E) Todas as afirmativas estão corretas. (x)
+
+### QUESTÃO 6 – Paradigmas de Programação (!)
 Durante uma aula sobre linguagens de programação, foram apresentados diversos paradigmas, como o imperativo, o funcional e o orientado a objetos. Cada paradigma adota uma forma distinta de modelar o comportamento do sistema e manipular os dados.
 
 I. A programação funcional preza pela imutabilidade de dados e evita efeitos colaterais.  (ok)
-II. O paradigma orientado a objetos favorece o encapsulamento e reutilização por meio de herança.  (ok)
+II. O paradigma orientado a objetos favorece o encapsulamento (*conversa entre classes*) e reutilização por meio de herança.  (ok)
 III. A programação imperativa descreve a lógica do programa por meio de comandos sequenciais.  (ok)
-IV. No paradigma funcional, o uso de loops tradicionais como for e while é incentivado em detrimento de funções como map e reduce. (Ok)
+IV. No paradigma funcional, o uso de loops tradicionais como for e while é incentivado em detrimento de funções como map e reduce. (não - while e for não são funções)
 
 **É correto o que se afirma em:**  
-A) I, II e III, apenas.  
+
+**A) I, II e III, apenas.** 
+
 B) II e IV, apenas.  (x)
+
 C) I, III e IV, apenas.  (x)
+
 D) I, II e IV, apenas.  (x)
-**E) Todas as afirmativas estão corretas.**
+
+E) Todas as afirmativas estão corretas. (x)
 
 ### QUESTÃO 7 – Setup de Ambiente com Node.js, VSCode e Supabase
 Ao iniciar o desenvolvimento de um projeto fullstack, uma equipe de estudantes realizou a instalação do Node.js, configurou o editor VSCode com extensões úteis, e utilizou o Supabase como backend. O objetivo era integrar de forma eficiente o frontend com um banco relacional escalável.
@@ -151,29 +181,39 @@ Ao iniciar o desenvolvimento de um projeto fullstack, uma equipe de estudantes r
 I. O VSCode oferece terminal integrado, sugestões automáticas de código e controle de versão integrado.  (ok)
 II. O comando npm install express é utilizado para adicionar o framework Express a um projeto Node.js.  (ok)
 III. O Supabase fornece serviços de autenticação e banco de dados prontos para uso com suporte a SQL.  (ok)
-IV. Após inicializar um projeto Node com npm init -y, não é necessário criar manualmente o package.json.  (ok)
+IV. Após inicializar um projeto Node com npm init (*cria um projeto node.js e cria o package.json*) -y, não é necessário criar manualmente o package.json.  (ok)
 
 **É correto o que se afirma em:**  
+
 A) I, II e IV, apenas.  
+
 B) I, II e III, apenas.  
+
 C) II, III e IV, apenas.  
+
 D) I, III e IV, apenas.  
+
 **E) Todas as afirmativas estão corretas.**
 
-### QUESTÃO 8 – Chave Primária e Estrangeira
+### QUESTÃO 8 – Chave Primária e Estrangeira (!)
 Em uma base de dados relacional, o uso adequado de chaves primárias e estrangeiras é essencial para manter a integridade dos dados e garantir que os relacionamentos entre as tabelas sejam consistentes. Um analista júnior precisa revisar o modelo lógico antes da implementação.
 
 I. Uma chave primária identifica unicamente cada linha da tabela e não aceita valores nulos.  (ok)
 II. Uma chave estrangeira estabelece um vínculo entre duas tabelas e pode ter valores nulos em alguns casos.  (ok)
 III. O uso de chaves estrangeiras ajuda a evitar inserções de dados inválidos em colunas que dependem de outras tabelas.  (ok)
-IV. Uma tabela pode conter múltiplas chaves primárias, desde que em colunas diferentes.  (?- mas acho que sim)
+IV. Uma tabela pode conter múltiplas chaves primárias, desde que em colunas diferentes.  (não, só pode ter uma)
 
 **É correto o que se afirma em:**  
-A) I, II e III, apenas.  
+
+**A) I, II e III, apenas.**  
+
 B) I e IV, apenas.  (x)
+
 C) II e III, apenas.  (x)
+
 D) I, III e IV, apenas.  (x)
-**E) Todas as afirmativas estão corretas.**
+
+E) Todas as afirmativas estão corretas. (x)
 
 ### QUESTÃO 9 – Introdução ao Padrão MVC
 O padrão de arquitetura MVC visa organizar o código de uma aplicação em três camadas: Model, View e Controller. Essa separação permite dividir tarefas de forma clara, além de tornar o desenvolvimento colaborativo mais eficiente.
@@ -184,10 +224,15 @@ III. O Controller centraliza a lógica de negócio e se comunica tanto com o Mod
 IV. É uma boa prática permitir que a View invoque diretamente métodos do banco de dados para maior eficiência.  (não, deve ter o controller para intermediar)
 
 **É correto o que se afirma em:**  
+
 **A) I, II e III, apenas.** 
+
 B) II e IV, apenas.  (X)
+
 C) I, III e IV, apenas.  (x)
+
 D) I, II e IV, apenas.  (x)
+
 E) Todas as afirmativas estão corretas. (X)
 
 ### QUESTÃO 10 – Estrutura e Semântica do HTML
@@ -196,13 +241,18 @@ A criação de páginas web bem estruturadas e acessíveis depende do uso adequa
 I. O uso de `<article>`, `<section>` e `<nav>` melhora a semântica e a acessibilidade das páginas.  (ok)
 II. A tag `<div>` é apropriada para estruturar conteúdo quando não há uma alternativa semântica adequada.  (Ok)
 III. A marcação correta de cabeçalhos hierárquicos ajuda na navegação de leitores de tela.  (ok)
-IV. Elementos semânticos são ignorados por mecanismos de busca e servem apenas para estilização visual.  (não)
+IV. Elementos semânticos são ignorados por mecanismos de busca e servem apenas para estilização visual.  (não, também ajudam para mecanismos de busca)
 
 **É correto o que se afirma em:**  
+
 **A) I, II e III, apenas.** 
+
 B) II e IV, apenas.  (x)
-C) I, III e IV, apenas.  
-D) I, II e IV, apenas.  (X)
-E) Todas as afirmativas estão corretas.
+
+C) I, III e IV, apenas.  (x)
+
+D) I, II e IV, apenas.  (x)
+
+E) Todas as afirmativas estão corretas. (x)
 
 ---
